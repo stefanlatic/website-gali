@@ -1,0 +1,223 @@
+* {
+    margin: 0px; padding: 0px; box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+}
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center center;
+    z-index: -2;
+}
+.hero-content {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    margin-top: 100px;
+    max-width: 700px;   
+    left: 10%;
+}
+#title-word {
+    color: rgb(255, 191, 0);
+};
+
+#title, #subtitle {
+    margin-left: 0;
+    margin-right: 0;
+}
+#title{
+    font-size: 40px;
+}
+#subtitle{
+    font-size: 16px;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+#logo {
+    height: 70px;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.menu-div {
+    font-size: 18px;
+    width: 600px;
+    display: inline-flex;
+    justify-content: space-around;
+    
+}
+a {
+    display: inline;
+    justify-content: space-around;
+    text-decoration: none;
+    color: white;
+    
+}
+a:hover {
+    color: rgb(255, 191, 0);
+}
+/*---------------------------ABOUT-SECTION------------------------------*/
+
+.about-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;   
+    padding-top: 60px;   
+}
+#about-title {
+    font-family: "Great Vibes", cursive;;
+    font-size: 34px;
+    color:  rgb(255, 191, 0);
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+#about-text {
+    text-align: center;
+    font-size: 18px;
+    max-width: 700px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.div-cards {
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+.card{
+    width: 300px;
+    height: 120px;
+    border: 3px, solid, rgb(255, 191, 0);
+    border-radius: 10px;
+}
+.material-symbols-rounded {
+    color: rgb(255, 191, 0);
+}
+.material-symbols-rounded {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 32;
+}
+.card-icon{
+    font-size: 40px;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    padding:5px 20px;
+}
+#card-text{
+    padding-top: 10px;
+    text-align: center;
+}
+/*---------------------------PRODUCT SECTION------------------------*/
+.product-section{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    background-color: #FEEAC9;
+
+}
+#products-title{ 
+    position: absolute;
+    margin-top: 50px;
+    right: 50%;
+    left: 48%;
+    transform: translateX(-50%);
+    font-family: "Great Vibes", cursive;
+    font-size: 34px;
+    color: rgb(255, 191, 0);
+    z-index: 100; 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.product-one-container{
+    position: relative; 
+    min-width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.product-one-container img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.product-one-container p{
+   position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 400px;
+  z-index: 3;
+  color: white;
+  font-size: 16px;
+  background: rgba(0,0,0,0.1);
+  padding: 6px 12px;
+
+}
+.product-one-container h2 {
+    color: white;
+    font-weight: 200;
+    font-size: 40px;
+    padding-top: 20px;
+    position: absolute;
+    z-index: 3;
+    bottom: 100px;
+    right: 30px;
+}
+.products-container{
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+.product-one-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+/*---------------------GALLERY SECTION----------------------------*/
+
+.gallery-section{
+    height: 100vh;
+}
