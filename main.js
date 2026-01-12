@@ -3,7 +3,7 @@ const sections = document.querySelectorAll("section");
 const productsSection = document.querySelector(".product-section");
 const productsContainer = document.querySelector(".products-container");
 const products = document.querySelectorAll(".product-one-container");
-
+const gallery = document.querySelector(".gallery-section")
 //state
 let currentSectionIndex = 0;
 let currentProductIndex = 0;
@@ -90,3 +90,52 @@ window.addEventListener(
     },
     { passive: false }
 );
+
+//gallery section
+
+const galleryImages = [
+    "images&videos/gallery-products/1.jpg",
+    "images&videos/gallery-products/2.jpg",
+    "images&videos/gallery-products/3.jpg",
+    "images&videos/gallery-products/4.jpg",
+    "images&videos/gallery-products/5.jpg",
+    "images&videos/gallery-products/6.jpg",
+    "images&videos/gallery-products/7.jpg",
+    "images&videos/gallery-products/8.jpg",
+    "images&videos/gallery-products/9.jpg",
+    "images&videos/gallery-products/10.jpg",
+    "images&videos/gallery-products/11.jpg",
+    "images&videos/gallery-products/12.jpg",
+    "images&videos/gallery-products/13.jpg",
+    "images&videos/gallery-products/14.jpg",
+    "images&videos/gallery-products/15.jpg",
+    "images&videos/gallery-products/16.jpg",
+    "images&videos/gallery-products/17.jpg",
+    "images&videos/gallery-products/18.jpg",
+    "images&videos/gallery-products/19.jpg",
+    "images&videos/gallery-products/20.jpg",
+    "images&videos/gallery-products/21.jpg",
+    "images&videos/gallery-products/23.jpg",
+    "images&videos/gallery-products/24.jpg",
+    "images&videos/gallery-products/25.jpg",
+    "images&videos/gallery-products/26.jpg",
+    "images&videos/gallery-products/27.jpg",
+    "images&videos/gallery-products/28.jpg",
+    "images&videos/gallery-products/29.jpg",
+    "images&videos/gallery-products/30.jpg",
+    "images&videos/gallery-products/31.jpg",
+    "images&videos/gallery-products/32.jpg",
+    "images&videos/gallery-products/1.jpg",
+    "images&videos/gallery-products/2.jpg",
+    "images&videos/gallery-products/3.jpg",
+    "images&videos/gallery-products/4.jpg",
+     "images&videos/gallery-products/22.jpg",
+];
+
+galleryImages.forEach( src => {
+    const img = document.createElement("img");
+
+    img.src = src;
+    img.className = "gallery-image";
+    gallery.appendChild(img);
+})

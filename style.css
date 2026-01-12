@@ -1,20 +1,26 @@
 * {
-    margin: 0px; padding: 0px; box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 section {
-  min-height: 100vh;
+    min-height: 100vh;
 }
+
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     overflow: hidden;
 }
+
 .hero video {
     position: absolute;
     top: 50%;
@@ -26,28 +32,36 @@ section {
     object-position: center center;
     z-index: -2;
 }
+
 .hero-content {
     position: absolute;
     z-index: 1;
     color: white;
     margin-top: 100px;
-    max-width: 700px;   
+    max-width: 700px;
     left: 10%;
 }
+
 #title-word {
     color: rgb(255, 191, 0);
-};
+}
 
-#title, #subtitle {
+;
+
+#title,
+#subtitle {
     margin-left: 0;
     margin-right: 0;
 }
-#title{
+
+#title {
     font-size: 40px;
 }
-#subtitle{
+
+#subtitle {
     font-size: 16px;
 }
+
 .overlay {
     position: absolute;
     top: 0;
@@ -57,9 +71,11 @@ section {
     background: rgba(0, 0, 0, 0.7);
     z-index: -1;
 }
+
 #logo {
     height: 70px;
 }
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -68,40 +84,46 @@ section {
     margin-right: 15px;
     margin-left: 15px;
 }
+
 .menu-div {
     font-size: 18px;
     width: 600px;
     display: inline-flex;
     justify-content: space-around;
     padding-top: 10px;
-    
+
 }
+
 a {
     display: inline;
     justify-content: space-around;
     text-decoration: none;
     color: white;
-    
+
 }
+
 a:hover {
     color: rgb(255, 191, 0);
 }
+
 /*---------------------------ABOUT-SECTION------------------------------*/
 
 .about-section {
     height: 100vh;
     display: flex;
-    flex-direction: column;  
-    align-items: center;   
-    padding-top: 60px;   
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
 }
+
 #about-title {
-    font-family: "Great Vibes", cursive;;
+    font-family: "Great Vibes", cursive;
     font-size: 34px;
-    color:  rgb(255, 191, 0);
+    color: rgb(255, 191, 0);
     margin-bottom: 20px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
+
 #about-text {
     text-align: center;
     font-size: 18px;
@@ -109,6 +131,7 @@ a:hover {
     width: 100%;
     margin-bottom: 40px;
 }
+
 .div-cards {
     width: 700px;
     display: flex;
@@ -116,37 +139,43 @@ a:hover {
     justify-content: space-between;
     gap: 30px;
 }
-.card{
+
+.card {
     width: 300px;
     height: 120px;
     border: 3px, solid, rgb(255, 191, 0);
     border-radius: 10px;
 }
+
 .material-symbols-rounded {
     color: rgb(255, 191, 0);
 }
+
 .material-symbols-rounded {
-  font-variation-settings:
-    'FILL' 1,
-    'wght' 500,
-    'GRAD' 0,
-    'opsz' 32;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 32;
 }
-.card-icon{
+
+.card-icon {
     font-size: 40px;
 }
 
-.card-header{
+.card-header {
     display: flex;
     justify-content: space-between;
-    padding:5px 20px;
+    padding: 5px 20px;
 }
-#card-text{
+
+#card-text {
     padding-top: 10px;
     text-align: center;
 }
+
 /*---------------------------PRODUCT SECTION------------------------*/
-.product-section{
+.product-section {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
@@ -155,7 +184,8 @@ a:hover {
     background-color: #FEEAC9;
 
 }
-#products-title{ 
+
+#products-title {
     position: absolute;
     margin-top: 50px;
     right: 50%;
@@ -164,11 +194,12 @@ a:hover {
     font-family: "Great Vibes", cursive;
     font-size: 34px;
     color: rgb(255, 191, 0);
-    z-index: 100; 
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    z-index: 100;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
-.product-one-container{
-    position: relative; 
+
+.product-one-container {
+    position: relative;
     min-width: 100%;
     height: 100vh;
     background-size: cover;
@@ -178,7 +209,8 @@ a:hover {
     scroll-snap-align: start;
 
 }
-.product-one-container img{
+
+.product-one-container img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -186,18 +218,20 @@ a:hover {
     object-fit: cover;
     z-index: 1;
 }
-.product-one-container p{
-   position: absolute;
-  bottom: 30px;
-  right: 30px;
-  width: 400px;
-  z-index: 3;
-  color: white;
-  font-size: 16px;
-  background: rgba(0,0,0,0.1);
-  padding: 6px 12px;
+
+.product-one-container p {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 400px;
+    z-index: 3;
+    color: white;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 6px 12px;
 
 }
+
 .product-one-container h2 {
     color: white;
     font-weight: 200;
@@ -208,24 +242,68 @@ a:hover {
     bottom: 100px;
     right: 30px;
 }
-.products-container{
+
+.products-container {
     display: flex;
     overflow-x: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     gap: 20px;
 }
+
 .product-one-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 2;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 /*---------------------GALLERY SECTION----------------------------*/
 
-.gallery-section{
+.gallery-section {
+    background-image: linear-gradient(#ffffff, #f5c151);
+    position: relative;
+    width: 100%;
     height: 100vh;
-    background-color: #FFC900;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.gallery-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    margin: 5px 10px;
+}
+
+.gallery-image:hover {
+    cursor: pointer;
+    border: 4px, solid, #f5c151;
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+}
+
+.gallery-btn {
+    all: unset;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 14px 32px;
+    font-size: 34px;
+    font-weight: 600;
+    font-family: "Great Vibes", cursive;
+    color: rgb(255, 191, 0);
+    z-index: 10;
+}
+.gallery-btn:hover{
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 50px;
+text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);}
+/*------------------------OUR LOCATIONS------------------------------*/
+
+.our-locations {
+    height: 100vh;
 }
