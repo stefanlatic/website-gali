@@ -1,42 +1,92 @@
-//selection
-const allProductsContainer = document.querySelector(".products-container");
-const aboutContainer = document.querySelector(".about-section"); 
+// selecting
+const sections = document.querySelectorAll("section");
+const productsSection = document.querySelector(".product-section");
+const productsContainer = document.querySelector(".products-container");
+const products = document.querySelectorAll(".product-one-container");
 
-let hasJumped = false;
-//probaj sa aboutSection
-aboutContainer.addEventListener("wheel", (e) => {
-    if (hasJumped) return;
+//state
+let currentSectionIndex = 0;
+let currentProductIndex = 0;
+let isScrolling = false;
 
-    const section = aboutContainer.getBoundingClientRect();
+//helper functions
+function scrollToSection(index) {
+    isScrolling = true;
 
-    //now it must be in current viewport
-    const isInView = section.top <= 0 && section.bottom > aboutContainer.innerHeight / 2;
-
-    if(!hasJumped && isInView && e.deltaY > 0)
-        e.preventDefault();
-
-    hasJumped = true;
-
-    allProductsContainer.scrollIntoView({
+    sections[index].scrollIntoView({
         behavior: "smooth"
-    })
-}, {passive : false});
+    });
 
-aboutContainer.addEventListener("scroll", () => {
-    const section = aboutContainer.getBoundingClientRect();
+    setTimeout(() => {
+        isScrolling = false;
+    }, 800);
+}
 
-    if(section.top >= 0) {
-        hasJumped = false;
-    }
-})
+function scrollToProduct(index) {
+    isScrolling = true;
 
-// wheel on all container
-allProductsContainer.addEventListener("wheel", (e) => {
-    if (e.deltaY !== 0) {
-        e.preventDefault();
-        allProductsContainer.scrollLeft += e.deltaY;
-    }
-}, { passive: false });
+    products[index].scrollIntoView({
+        behavior: "smooth",
+        inline: "start"
+    });
 
+    setTimeout(() => {
+        isScrolling = false;
+    }, 800);
+}
 
-// Sad mi treba da popravim skrol na dole sa about na product sekciju i onda da se skrolom na gore vrati gore 
+function isInProductsSection() {
+    const rect = productsSection.getBoundingClientRect();
+    return rect.top <= 0 && rect.bottom > window.innerHeight / 2;
+}
+
+productsContainer.addEventListener("scroll", () => {
+    const index = Math.round(
+        productsContainer.scrollLeft / productsContainer.clientWidth
+    );
+    currentProductIndex = index;
+});
+//main wheel handler
+window.addEventListener(
+    "wheel",
+    (e) => {
+        if (isScrolling) return;
+
+        //product section
+        if (isInProductsSection()) {
+            // scroll down -> right
+            if (e.deltaY > 0) {
+                if (currentProductIndex < products.length - 1) {
+                    e.preventDefault();
+                    currentProductIndex++;
+                    scrollToProduct(currentProductIndex);
+                    return;
+                }
+            }
+
+            // scroll up -> left
+            if (e.deltaY < 0) {
+                if (currentProductIndex > 0) {
+                    e.preventDefault();
+                    currentProductIndex--;
+                    scrollToProduct(currentProductIndex);
+                    return;
+                }
+            }
+
+        }
+        //global section scroll
+        if (e.deltaY > 0) {
+            if (currentSectionIndex < sections.length - 1) {
+                currentSectionIndex++;
+                scrollToSection(currentSectionIndex);
+            }
+        } else {
+            if (currentSectionIndex > 0) {
+                currentSectionIndex--;
+                scrollToSection(currentSectionIndex);
+            }
+        }
+    },
+    { passive: false }
+);

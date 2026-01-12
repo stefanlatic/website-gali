@@ -6,7 +6,9 @@ html, body {
     height: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
+section {
+  min-height: 100vh;
+}
 .hero {
     position: relative;
     width: 100%;
@@ -168,11 +170,13 @@ a:hover {
 .product-one-container{
     position: relative; 
     min-width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     flex-shrink: 0;
     overflow: hidden;
+    scroll-snap-align: start;
+
 }
 .product-one-container img{
     position: absolute;
@@ -206,8 +210,10 @@ a:hover {
 }
 .products-container{
     display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     gap: 20px;
-    overflow-x: auto;
 }
 .product-one-container::before {
   content: "";
@@ -221,4 +227,5 @@ a:hover {
 
 .gallery-section{
     height: 100vh;
+    background-color: #FFC900;
 }
