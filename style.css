@@ -438,9 +438,12 @@ iframe {
 /*----------------------------Footer--------------------------------*/
 
 footer {
-    min-height: 500px;
+    min-height: 100vh;
     background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
     overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: flex-end;
 }
 
 .stars {
@@ -462,4 +465,42 @@ footer {
         80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
         95vw 75vh 2px white;
     animation: twinkle 8s infinite linear;
+}
+
+#ftr-message {
+    font-family: "Great Vibes", cursive;
+    font-size: 34px;
+    margin-bottom: 40px;
+}
+
+#ftr-wrd {
+    color: rgb(255, 191, 0);
+}
+
+.questions {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+footer p {
+    text-decoration: underline;
+}
+
+.social-medias img {
+    width: 50px;
+    height: 50px;
+}
+.contact-icon img {
+    width: 70px;
+    height: 70px;
+
+}
+.contact-icon{
+    display: inline-flex;
+    justify-content: end;
+}
+.footer-iconsandmessage{
+    display: flex;
+    flex-direction: column;
+    
 }
