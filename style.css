@@ -3,7 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+ body{
+    scroll-behavior: smooth;
+ }
 html,
 body {
     height: 100%;
@@ -91,7 +93,6 @@ section {
     display: inline-flex;
     justify-content: space-around;
     padding-top: 10px;
-
 }
 
 a {
@@ -99,16 +100,16 @@ a {
     justify-content: space-around;
     text-decoration: none;
     color: white;
-
 }
 
 a:hover {
     color: rgb(255, 191, 0);
+    cursor: pointer;
 }
 
 /*---------------------------ABOUT-SECTION------------------------------*/
 
-.about-section {
+#about-section {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -175,7 +176,7 @@ a:hover {
 }
 
 /*---------------------------PRODUCT SECTION------------------------*/
-.product-section {
+#product-section {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
@@ -261,7 +262,7 @@ a:hover {
 
 /*---------------------GALLERY SECTION----------------------------*/
 
-.gallery-section {
+#gallery-section {
     background-image: linear-gradient(#ffffff, #f5c151);
     position: relative;
     width: 100%;
@@ -307,7 +308,7 @@ a:hover {
 
 /*------------------------OUR LOCATIONS------------------------------*/
 
-.our-locations {
+#our-locations {
     display: block;
 }
 
@@ -438,12 +439,12 @@ iframe {
 /*----------------------------Footer--------------------------------*/
 
 footer {
-    min-height: 100vh;
+    min-height: 300px;
     background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
     overflow: hidden;
     color: white;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
 }
 
 .stars {
@@ -470,37 +471,123 @@ footer {
 #ftr-message {
     font-family: "Great Vibes", cursive;
     font-size: 34px;
-    margin-bottom: 40px;
 }
 
 #ftr-wrd {
     color: rgb(255, 191, 0);
 }
 
-.questions {
-    margin-top: 5%;
-    margin-left: 5%;
-}
 
 footer p {
     text-decoration: underline;
+    margin-top: 10px;
+    font-size: 18px;
 }
-
 .social-medias img {
     width: 50px;
     height: 50px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 .contact-icon img {
     width: 70px;
     height: 70px;
-
 }
 .contact-icon{
     display: inline-flex;
     justify-content: end;
+    z-index: 3;
+    margin-right: 5%;
 }
-.footer-iconsandmessage{
+.footer-second-part{
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
+    margin-bottom: 5%;
+}
+.footer-first-part{
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 5%;
+}
+
+/* ----------------sidebar---------------------*/
+
+.contact-sidebar {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: fixed;
+    top: 0;
+    right: -500px; 
+    width: 500px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    padding: 30px;
+    transition: right 0.4s ease;
+    z-index: 1001;
+
+}
+.contact-sidebar.active{
+    right: 0px;
+}
+.contact-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.contact-info{
+    text-align: center;
+    width: 400px;
+}
+.contact-info p{
+    font-size: 14px;
+}
+.mail-info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 400px;
+}
+.mail-info label{
+    text-align: left;
+}
+textarea {
+    font-size: 16px;
+    height: 200px;
+    font-size: large;
+    border: 1px, solid, black;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+.mail-info input{
+    font-size: 16px;
+    border: 1px, solid, black;
+    border-radius: 10px;
+    height: 30px;
+    padding: 10px 15px;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }

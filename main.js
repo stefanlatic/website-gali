@@ -1,9 +1,14 @@
 // selecting
 const sections = document.querySelectorAll("section");
-const productsSection = document.querySelector(".product-section");
+const productsSection = document.querySelector("#product-section");
 const productsContainer = document.querySelector(".products-container");
 const products = document.querySelectorAll(".product-one-container");
-const gallery = document.querySelector(".gallery-section")
+const gallery = document.querySelector("#gallery-section");
+const contactBtn = document.getElementById("contact-btn");
+const closeBtn = document.querySelector(".close-btn");
+const contactSidebar = document.querySelector(".contact-sidebar");
+const overlay = document.querySelector(".overlay");
+
 //state
 let currentSectionIndex = 0;
 let currentProductIndex = 0;
@@ -139,3 +144,37 @@ galleryImages.forEach( src => {
     img.className = "gallery-image";
     gallery.appendChild(img);
 })
+
+// -----------sidebar--------------
+
+contactBtn.addEventListener("click", (e) => {
+     e.preventDefault();
+
+    contactSidebar.classList.add("active");
+    overlay.classList.add("active");
+
+      lockScroll();
+})
+
+closeBtn.addEventListener("click", closeSidebar);
+overlay.addEventListener("click", closeSidebar);
+
+function closeSidebar() {
+    contactSidebar.classList.remove("active");
+    overlay.classList.remove("active");
+
+    unlockScroll();
+}
+
+//------functions for scrolling sitebar <-> background---------
+function lockScroll() {
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${window.scrollY}px`;
+}
+
+function unlockScroll() {
+  const scrollY = document.body.style.top;
+  document.body.style.position = "";
+  document.body.style.top = "";
+  window.scrollTo(0, parseInt(scrollY || "0") * -1);
+}
