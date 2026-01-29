@@ -3,19 +3,15 @@
     padding: 0px;
     box-sizing: border-box;
 }
- body{
-    scroll-behavior: smooth;
- }
 html,
 body {
     height: 100%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Ubuntu", sans-serif;
+    scroll-behavior: smooth;
 }
-
 section {
     min-height: 100vh;
 }
-
 .hero {
     position: relative;
     width: 100%;
@@ -64,7 +60,7 @@ section {
     font-size: 16px;
 }
 
-.overlay {
+.main-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -88,7 +84,7 @@ section {
 }
 
 .menu-div {
-    font-size: 18px;
+    font-size: 16px;
     width: 600px;
     display: inline-flex;
     justify-content: space-around;
@@ -118,7 +114,8 @@ a:hover {
 }
 
 #about-title {
-    font-family: "Great Vibes", cursive;
+    font-family: "Pattaya", sans-serif;
+    font-weight: 200;
     font-size: 34px;
     color: rgb(255, 191, 0);
     margin-bottom: 20px;
@@ -192,7 +189,8 @@ a:hover {
     right: 50%;
     left: 48%;
     transform: translateX(-50%);
-    font-family: "Great Vibes", cursive;
+    font-family: "Pattaya", sans-serif;
+    font-weight: 200;
     font-size: 34px;
     color: rgb(255, 191, 0);
     z-index: 100;
@@ -222,15 +220,20 @@ a:hover {
 
 .product-one-container p {
     position: absolute;
-    bottom: 30px;
+    bottom: 50px;
     right: 30px;
     width: 400px;
     z-index: 3;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
     padding: 6px 12px;
-
+    width: 400px;
+    text-wrap: wrap;
+    text-align: center;
+    text-underline-offset: 10px;
+    line-height: 28px;
 }
 
 .product-one-container h2 {
@@ -240,7 +243,7 @@ a:hover {
     padding-top: 20px;
     position: absolute;
     z-index: 3;
-    bottom: 100px;
+    bottom: 300px;
     right: 30px;
 }
 
@@ -294,7 +297,8 @@ a:hover {
     padding: 14px 32px;
     font-size: 34px;
     font-weight: 600;
-    font-family: "Great Vibes", cursive;
+    font-family: "Pattaya", sans-serif;
+    font-weight: 200;
     color: rgb(255, 191, 0);
     z-index: 10;
 }
@@ -345,7 +349,8 @@ a:hover {
 .text2 h1,
 .text3 h1,
 .text4 h1 {
-    font-family: "Great Vibes", cursive;
+    font-family: "Pattaya", sans-serif;
+    font-weight: 200;
     font-size: 34px;
     color: rgb(255, 191, 0);
     padding-right: 15px;
@@ -469,7 +474,8 @@ footer {
 }
 
 #ftr-message {
-    font-family: "Great Vibes", cursive;
+   font-family: "Pattaya", sans-serif;
+    font-weight: 200;
     font-size: 34px;
 }
 
@@ -514,7 +520,6 @@ footer p {
 /* ----------------sidebar---------------------*/
 
 .contact-sidebar {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: fixed;
     top: 0;
     right: -500px; 
@@ -527,7 +532,6 @@ footer p {
     padding: 30px;
     transition: right 0.4s ease;
     z-index: 1001;
-
 }
 .contact-sidebar.active{
     right: 0px;
@@ -537,17 +541,25 @@ footer p {
 }
 
 .contact-info{
-    text-align: center;
-    width: 400px;
-}
-.contact-info p{
-    font-size: 14px;
-}
-.mail-info{
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 400px;
+    gap: 10px;
+}
+.contact-info p{
+    font-size: 14px;
+}
+.contact-sidebar h2{
+    color:  rgb(255, 191, 0);
+}
+.mail-info{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 400px;
+    gap: 10px;
 }
 .mail-info label{
     text-align: left;
@@ -577,7 +589,6 @@ textarea {
   z-index: 1000;
   overflow: hidden;
 }
-
 .overlay.active {
   opacity: 1;
   pointer-events: all;
@@ -590,4 +601,15 @@ textarea {
   background: none;
   border: none;
   cursor: pointer;
+}
+#send-button {
+    margin-top: 15px;
+    margin-left: 42%;
+    margin-right: 42%;
+    height: 30px;
+    width: 80px;
+    border: 1px, solid, white;
+    border-radius: 10px;
+    background-color: rgb(255, 191, 0);
+    color: white;
 }

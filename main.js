@@ -68,7 +68,6 @@ window.addEventListener(
                     return;
                 }
             }
-
             // scroll up -> left
             if (e.deltaY < 0) {
                 if (currentProductIndex > 0) {
@@ -78,7 +77,6 @@ window.addEventListener(
                     return;
                 }
             }
-
         }
         //global section scroll
         if (e.deltaY > 0) {
@@ -95,8 +93,7 @@ window.addEventListener(
     },
     { passive: false }
 );
-
-//gallery section
+//--------------------------gallery section---------------------------
 
 const galleryImages = [
     "images&videos/gallery-products/1.jpg",
@@ -145,7 +142,7 @@ galleryImages.forEach( src => {
     gallery.appendChild(img);
 })
 
-// -----------sidebar--------------
+// -------------------------sidebar--------------------------------
 
 contactBtn.addEventListener("click", (e) => {
      e.preventDefault();
