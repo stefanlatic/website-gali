@@ -268,20 +268,27 @@ a:hover {
 #gallery-section {
     background-image: linear-gradient(#ffffff, #f5c151);
     position: relative;
-    width: 100%;
-    height: 100vh;
     overflow: hidden;
-    padding-top: 10px;
 }
-
-.gallery-image {
+.row {
+    overflow: hidden;
+    white-space: nowrap;
+    gap: 10px;
+}
+.track {
+    display: inline-flex;
+    gap: 20px;
+    width: max-content;
+}
+.track img {
     width: 120px;
     height: 120px;
+    object-fit: cover;
     border-radius: 16px;
-    margin: 5px 10px;
+    margin: 5px 0px;
 }
 
-.gallery-image:hover {
+.track img:hover {
     cursor: pointer;
     border: 4px, solid, #f5c151;
     transform: scale(1.05);
@@ -300,7 +307,6 @@ a:hover {
     font-family: "Pattaya", sans-serif;
     font-weight: 200;
     color: rgb(255, 191, 0);
-    z-index: 10;
 }
 
 .gallery-btn:hover {
@@ -309,7 +315,35 @@ a:hover {
     font-size: 50px;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
 }
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+@keyframes scroll-right {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.row-left-1 .track, .row-left-2 .track{
+    animation: scroll-left 30s linear infinite;
+}
+.row-right-1 .track, .row-right-2 .track{
+    animation: scroll-right 30s linear infinite;
+}
 
+.row-right-1 .track{
+    margin-top: 30px;
+}
+.row-left-2 .track{
+    margin-bottom: 30px;
+}
 /*------------------------OUR LOCATIONS------------------------------*/
 
 #our-locations {
@@ -516,6 +550,11 @@ footer p {
     justify-content: space-between;
     margin: 5%;
 }
+.questions p{
+    cursor: pointer;
+}
+/*--------footer-popups---------*/
+
 
 /* ----------------sidebar---------------------*/
 
