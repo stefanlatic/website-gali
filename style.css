@@ -3,15 +3,18 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
 html,
 body {
     height: 100%;
     font-family: "Ubuntu", sans-serif;
     scroll-behavior: smooth;
 }
+
 section {
     min-height: 100vh;
 }
+
 .hero {
     position: relative;
     width: 100%;
@@ -135,14 +138,14 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px;
+    gap: 10px;
 }
 
 .card {
-    width: 300px;
+    width: 340px;
     height: 120px;
-    border: 3px, solid, rgb(255, 191, 0);
-    border-radius: 10px;
+    border: 1.5px, solid, rgb(255, 191, 0);
+    border-radius: 20px;
 }
 
 .material-symbols-rounded {
@@ -164,11 +167,11 @@ a:hover {
 .card-header {
     display: flex;
     justify-content: space-between;
-    padding: 5px 20px;
+    padding: 10px 20px;
 }
 
 #card-text {
-    padding-top: 10px;
+    padding-top: 3px;
     text-align: center;
 }
 
@@ -270,16 +273,19 @@ a:hover {
     position: relative;
     overflow: hidden;
 }
+
 .row {
     overflow: hidden;
     white-space: nowrap;
     gap: 10px;
 }
+
 .track {
     display: inline-flex;
     gap: 20px;
     width: max-content;
 }
+
 .track img {
     width: 120px;
     height: 120px;
@@ -315,35 +321,45 @@ a:hover {
     font-size: 50px;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
 }
+
 @keyframes scroll-left {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-50%);
     }
 }
+
 @keyframes scroll-right {
     from {
         transform: translateX(-50%);
     }
+
     to {
         transform: translateX(0);
     }
 }
-.row-left-1 .track, .row-left-2 .track{
+
+.row-left-1 .track,
+.row-left-2 .track {
     animation: scroll-left 30s linear infinite;
 }
-.row-right-1 .track, .row-right-2 .track{
+
+.row-right-1 .track,
+.row-right-2 .track {
     animation: scroll-right 30s linear infinite;
 }
 
-.row-right-1 .track{
+.row-right-1 .track {
     margin-top: 30px;
 }
-.row-left-2 .track{
+
+.row-left-2 .track {
     margin-bottom: 30px;
 }
+
 /*------------------------OUR LOCATIONS------------------------------*/
 
 #our-locations {
@@ -508,7 +524,7 @@ footer {
 }
 
 #ftr-message {
-   font-family: "Pattaya", sans-serif;
+    font-family: "Pattaya", sans-serif;
     font-weight: 200;
     font-size: 34px;
 }
@@ -516,83 +532,149 @@ footer {
 #ftr-wrd {
     color: rgb(255, 191, 0);
 }
+.footer-questions{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
 
-
-footer p {
+footer .ques {
     text-decoration: underline;
     margin-top: 10px;
     font-size: 18px;
 }
+
 .social-medias img {
     width: 50px;
     height: 50px;
     margin-bottom: 20px;
     margin-right: 20px;
+    cursor: pointer;
 }
+
 .contact-icon img {
     width: 70px;
     height: 70px;
 }
-.contact-icon{
+
+.contact-icon {
     display: inline-flex;
-    justify-content: end;
+    justify-content: space-between;
     z-index: 3;
     margin-right: 5%;
 }
-.footer-second-part{
+
+.footer-second-part {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5%;
 }
-.footer-first-part{
-    display: inline-flex;
+
+.footer-first-part {
+    display: flex;
     justify-content: space-between;
     margin: 5%;
 }
-.questions p{
+
+.ques {
     cursor: pointer;
 }
+
 /*--------footer-popups---------*/
 
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 100;
+}
 
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 101;
+    color: black;
+}
+
+.popup.active,
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.popup p {
+    margin-top: 10px;
+}
+.popup-title{
+    font-size: xx-large;
+}
+.popup-text{
+    font-size: x-large;
+}
 /* ----------------sidebar---------------------*/
 
 .contact-sidebar {
     position: fixed;
     top: 0;
-    right: -500px; 
+    right: -500px;
     width: 500px;
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     background: #fff;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
     padding: 30px;
     transition: right 0.4s ease;
     z-index: 1001;
 }
-.contact-sidebar.active{
+
+.contact-sidebar.active {
     right: 0px;
 }
+
 .contact-sidebar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
-.contact-info{
+.contact-info {
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 400px;
     gap: 10px;
 }
-.contact-info p{
+
+.contact-info p {
     font-size: 14px;
 }
-.contact-sidebar h2{
-    color:  rgb(255, 191, 0);
+
+.contact-sidebar h2 {
+    color: rgb(255, 191, 0);
 }
-.mail-info{
+
+.mail-info {
     margin-top: 15px;
     display: flex;
     flex-direction: column;
@@ -600,9 +682,11 @@ footer p {
     width: 400px;
     gap: 10px;
 }
-.mail-info label{
+
+.mail-info label {
     text-align: left;
 }
+
 textarea {
     font-size: 16px;
     height: 200px;
@@ -611,36 +695,41 @@ textarea {
     border-radius: 10px;
     padding: 10px 15px;
 }
-.mail-info input{
+
+.mail-info input {
     font-size: 16px;
     border: 1px, solid, black;
     border-radius: 10px;
     height: 30px;
     padding: 10px 15px;
 }
+
 .overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-  overflow: hidden;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    overflow: hidden;
 }
+
 .overlay.active {
-  opacity: 1;
-  pointer-events: all;
+    opacity: 1;
+    pointer-events: all;
 }
+
 .close-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
+
 #send-button {
     margin-top: 15px;
     margin-left: 42%;

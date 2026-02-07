@@ -138,10 +138,36 @@ function unlockScroll() {
   window.scrollTo(0, parseInt(scrollY || "0") * -1);
 }
 
-//----------footer answers---------
+//----------footer popups---------
 
-const questionOne = document.getElementById("question-one");
-const questionTwo = document.getElementById("question-two");
-const questionThree = document.getElementById("question-three");
-const questionFour = document.getElementById("question-four");
+const questions = document.querySelectorAll(".ques");
+const popup = document.querySelector(".popup");
+const popupOverlay = document.querySelector(".popup-overlay");
+const closePopupBtn = document.querySelector(".popup-close-btn");
 
+const popupTitle = document.querySelector(".popup-title");
+const popupText = document.querySelector(".popup-text");
+
+// Otvaranje
+questions.forEach(question => {
+    question.addEventListener("click", () => {
+        popupTitle.textContent = question.dataset.title;
+        popupText.textContent = question.dataset.text;
+
+        popup.classList.add("active");
+        popupOverlay.classList.add("active");
+    });
+});
+
+// Zatvaranje
+function closePopup() {
+    popup.classList.remove("active");
+    popupOverlay.classList.remove("active");
+}
+
+closePopupBtn.addEventListener("click", closePopup);
+popupOverlay.addEventListener("click", closePopup);
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closePopup();
+});
